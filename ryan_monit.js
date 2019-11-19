@@ -182,8 +182,9 @@ class ryan_monit {
 		console.error('latestList');
 		console.error(latestList);
 
-		let msg = '';
+
 		for (let i in latestList) {
+			let msg = '';
 			msg += latestList[i].title + '\n';
 			msg += latestList[i].url + '\n';
 

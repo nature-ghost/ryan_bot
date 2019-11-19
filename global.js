@@ -1,6 +1,6 @@
 let Global = {
     bot : null,
     token:'',
-    chatId: '',
+    chatId: ''
 };
 module.exports = Global;

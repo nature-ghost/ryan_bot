@@ -24,7 +24,8 @@
     "request": "*",
     "request-promise": "*",
     "require": "2.4.20",
-    "socket.io-client": "1.4.8"
+    "socket.io-client": "1.4.8",
+    "lodash": ">=4.17.13"
   },
   "devDependencies": {
     "debug": "^4.1.1"

@@ -170,7 +170,7 @@ class ryan_monit {
 
 		this.intervalId = setInterval(()=> {
 			try{
-				this.baseTime = new Date();
+				// this.baseTime = new Date();
 				this.getLists();
 			} catch (e) {
 				console.error(e);
@@ -187,7 +187,7 @@ class ryan_monit {
 			let msg = '';
 			msg += latestList[i].title + '\n';
 			msg += latestList[i].url + '\n';
-
+			this.baseTime = new Date(latestList[i].date);
 			this.sendMessage({
 				id: this.chatId,
 				text: msg,

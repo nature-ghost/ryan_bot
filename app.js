@@ -6,7 +6,6 @@ const {Filter, Ryan_TelegramBot, Utils } = require('./controller/utils');
 const log = console.log;
 const {ryanMonit} = require('./ryan_monit');
 
-global.bot = new Ryan_TelegramBot(token, { polling: false });
 global.util = new Utils();
 
 // Create a new Express application.

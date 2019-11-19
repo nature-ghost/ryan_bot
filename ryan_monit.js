@@ -13,7 +13,7 @@ class ryan_monit {
 		this.token = token;
 		this.chatId = chatId;
 
-		this.baseTime = new Date('2019-11-19 20:00:00');
+		this.baseTime = new Date('2019-11-19 20:00:00').getTime();
 
 		this.intervalId = undefined;
 
@@ -144,13 +144,16 @@ class ryan_monit {
 				this.list = res;
 			}
 			let latestList = this.getFilter();
-
-			this.pushList(latestList);
+			let latestList_ = latestList.sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+			// console.error(latestList);
+			// console.error('################################################################################');
+			// console.error(latestList_);
+			this.pushList(latestList_);
 		});
 	}
 
 	getFilter() {
-		return this.list.filter(item => (new Date(item.date) >= this.baseTime));
+		return this.list.filter(item => (new Date(item.date).getTime() > this.baseTime));
 	}
 
 	monitPolling() {
@@ -187,7 +190,8 @@ class ryan_monit {
 			let msg = '';
 			msg += latestList[i].title + '\n';
 			msg += latestList[i].url + '\n';
-			this.baseTime = new Date(latestList[i].date);
+			this.baseTime = new Date(latestList[i].date).getTime();
+			// console.error(latestList[i].title + ' // baseTime : ' + this.baseTime);
 			this.sendMessage({
 				id: this.chatId,
 				text: msg,

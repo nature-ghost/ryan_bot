@@ -34,14 +34,14 @@ class ryan_monit {
 		this.crawlingData = {
 			"jirum": {
 				"id": "jirum",
-				"baseTime": new Date('2019-11-22 10:48:11').getTime(),
+				"baseTime": new Date('2019-12-17 09:00:00').getTime(),
 				"url": "https://www.clien.net/service/board/jirum",
 				"list": [],
 				"chatId": '-1001193133654'
 			},
 			"news": {
 				"id": "news",
-				"baseTime": new Date('2019-11-22 11:14:48').getTime(),
+				"baseTime": new Date('2019-12-17 09:00:00').getTime(),
 				"url": "https://www.clien.net/service/board/news",
 				"list": [],
 				"chatId": '-1001307416001'
@@ -51,7 +51,7 @@ class ryan_monit {
 		this.token = token;
 		this.chatId = chatId;
 
-		this.baseTime = new Date('2019-11-21 00:36:45').getTime();
+		this.baseTime = new Date('2019-12-17 09:00:00').getTime();
 		this.intervalId = undefined;
 
 		this.getHtmlWithItem = async (item) => {
